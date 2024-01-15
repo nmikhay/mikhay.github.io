@@ -594,6 +594,14 @@ section {
   padding: 0;
 }
 
+.portfolio-details .portfolio-details-slider img {
+  width: 100%; 
+  height: auto; 
+  object-fit: cover; 
+  max-height: 200px; 
+}
+
+
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
