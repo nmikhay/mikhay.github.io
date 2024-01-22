@@ -69,7 +69,7 @@ h6 {
   z-index: 9997;
   transition: all 0.5s;
   padding: 0 15px;
-  background: #cf8181;
+  background: #41344d;
   overflow-y: auto;
 }
 
@@ -77,7 +77,7 @@ h6 {
   margin: 15px auto;
   display: block;
   width: 120px;
-  border: 6px solid hsl(2, 63%, 56%);;
+  border: 6px solid hsl(2, 35%, 50%);;
 }
 
 #header .profile h1 {
@@ -112,7 +112,7 @@ h6 {
 }
 
 #header .profile .social-links a:hover {
-  background: hsl(2, 63%, 56%);
+  background: hsl(2, 35%, 50%);
   color: #fff;
   text-decoration: none;
 }
@@ -192,7 +192,7 @@ h6 {
 .nav-menu .active i,
 .nav-menu .active:focus i,
 .nav-menu li:hover>a i {
-  color: #d64d48;
+  color: hsl(2, 35%, 50%);
 }
 
 /* Mobile Navigation */
@@ -205,7 +205,7 @@ h6 {
   font-size: 24px;
   transition: all 0.4s;
   outline: none !important;
-  background-color:  #d64d48;
+  background-color:  hsl(2, 35%, 50%);
   color: #fff;
   width: 40px;
   height: 40px;
@@ -271,7 +271,7 @@ h6 {
   color: #fff;
   padding-bottom: 4px;
   letter-spacing: 1px;
-  border-bottom: 3px solid  #d64d48;
+  border-bottom: 3px solid  hsl(2, 35%, 50%);
 }
 
 @media (min-width: 1024px) {
@@ -324,7 +324,7 @@ section {
   display: block;
   width: 50px;
   height: 3px;
-  background:  #d64d48;
+  background:  hsl(2, 35%, 50%);
   bottom: 0;
   left: 0;
 }
@@ -532,12 +532,24 @@ section {
 /*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/
+
+/* Portfolio Images Uniform Sizing */
+.portfolio-item .portfolio-wrap .project-image {
+  width: 100%;      /* Ensures the image takes the full width of its container */
+  height: 250px;    /* Sets a fixed height for all images */
+  object-fit: cover; /* Ensures images cover the area nicely without distortion */
+}
+
+/* Existing Portfolio Details Styling */
 .portfolio-details {
   padding-top: 40px;
 }
 
 .portfolio-details .portfolio-details-slider img {
   width: 100%;
+  height: auto; 
+  object-fit: cover; 
+  max-height: 200px;
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination {
@@ -594,11 +606,30 @@ section {
   padding: 0;
 }
 
-.portfolio-details .portfolio-details-slider img {
-  width: 100%; 
-  height: auto; 
-  object-fit: cover; 
-  max-height: 200px; 
+
+
+.portfolio-description {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for exact centering */
+  width: 80%; /* Adjust width as needed */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  text-align: center;
+  font-size: 20px; /* Adjust font size as needed */
+  font-weight: bold; /* Bold text */
+  color: black; /* Black text */
+  z-index: 2; /* Ensure it's above the image */
+}
+
+.portfolio-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-wrap:hover .portfolio-description {
+  opacity: 1;
 }
 
 
@@ -616,10 +647,10 @@ section {
   justify-content: center;
   width: 54px;
   height: 54px;
-  background: #c6576f;
+  background: hsl(2, 35%, 50%);
   border-radius: 50%;
   transition: 0.5s;
-  border: 1px solid #dd146b;
+  border: 1px solid #dd3914;
 }
 
 .services .icon i {
